@@ -6,41 +6,38 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:44 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 00:44:07 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:13:26 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// Your function definition here
 char	*ft_strnstr(const char *s, const char *find, size_t slen)
 {
 	size_t	len;
+	char	c;
+	char	sc;
 
-	char c, sc;
 	c = *find++;
-	if (c == '\0') // If the find string is empty, return the original string
+	if (c == '\0')
 		return ((char *)s);
 	len = ft_strlen(find);
-	// Get the length of the remaining find string
-	while (slen > 0 && (sc = *s) != '\0')
-	// Loop until the end of the original string or the slen limit
+	sc = *s;
+	while (slen > 0 && sc != '\0')
 	{
-		if (sc == c) // If the first character matches
+		if (sc == c)
 		{
 			if (len > slen)
-				// If the remaining find string is longer than the slen limit,
-				return (NULL return (NULL));
+				return (NULL);
 			if (ft_strncmp(s + 1, find, len) == 0)
-				return ((char *)s));
+				return ((char *)s);
 		}
-		s++;    // Move to the next character
-		slen--; // Decrease the slen limit
+		s++;
+		slen--;
 	}
-	return (NULL); // If no match is found, return NULL
+	return (NULL);
 }
-
-//Main function to test your function
+// Main function to test your function
 // int main()
 // {
 //     // Some sample inputs and outputs

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:24:39 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 00:24:40 by ysemlali         ###   ########.fr       */
+/*   Created: 2023/11/07 17:04:59 by ysemlali          #+#    #+#             */
+/*   Updated: 2023/11/07 17:11:48 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
