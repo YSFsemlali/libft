@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:24 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 00:24:25 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/08 22:41:36 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	*copy_strings(char *sep, char *str)
 	return (word);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		x;
@@ -84,20 +84,20 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	x = 0;
-	word_count = count_words(str, charset);
+	word_count = count_words((char *)s, &c);
 	strings = (char **)malloc(sizeof(char *) * word_count + 1);
 	if (!strings)
 		return (0);
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		while (str[i] && next_separator_found(charset, str[i]))
+		while (s[i] && next_separator_found(&c, s[i]))
 			i++;
-		if (str[i] != '\0')
+		if (s[i] != '\0')
 		{
-			strings[x] = copy_strings(charset, str + i);
+			strings[x] = copy_strings(&c, (char *)s + i);
 			x++;
 		}
-		while (str[i] && !next_separator_found(charset, str[i]))
+		while (s[i] && !next_separator_found(&c, s[i]))
 			i++;
 	}
 	strings[x] = 0;
@@ -105,23 +105,23 @@ char	**ft_split(char *str, char *charset)
 }
 
 // #include <stdio.h>
+
 // int	main(void)
 // {
 // 	char	*input_string;
-// 	char	*separator_chars;
+// 	char	separator_chars;
 // 	char	**result;
 // 	int		i;
 
 // 	input_string = " hello world this is a test  ";
-// 	separator_chars = " ";
-//     i = 0;
-//     result = ft_split(input_string, separator_chars);
-//     while( result[i] != 0)
-//     {
-//         printf("[%s]", result[i]);
-//         i++;
-//     }
-//     printf("%s", result[i]);
-
+// 	separator_chars = ' ';
+// 	i = 0;
+// 	result = ft_split(input_string, separator_chars);
+// 	while (result[i] != 0)
+// 	{
+// 		printf("[%s]", result[i]);
+// 		i++;
+// 	}
+// 	printf("%s", result[i]);
 // 	return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:44 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 19:06:51 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/08 20:08:47 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ char	*ft_strnstr(const char *s, const char *find, size_t slen)
 	char	c;
 	char	sc;
 
-	if (c == '\0')
-		
 	c = *find++;
-	len = ft_strlen(find);
+	if (c == '\0')
+		len = ft_strlen(find);
 	sc = *s;
 	while (slen > 0 && sc != '\0')
 	{
@@ -38,30 +37,31 @@ char	*ft_strnstr(const char *s, const char *find, size_t slen)
 	return ((char *)s);
 }
 
-char	*strnstr(const char *s, const char *find, size_t slen)
-{
-	size_t	len;
-	char	c;
-	char	sc;
+// char	*strnstr(const char *s, const char *find, size_t slen)
+// {
+// 	size_t	len;
+// 	char	c;
+// 	char	sc;
 
-	if (c != '\0')
-	{
-		c = *find++;
-		len = strlen(find);
-		while (ft_strncmp(s, find, len) != 0)
-		{
-			while (sc != c);
-			{
-				if ((sc = *s++) == '\0' || slen-- < 1)
-					return (NULL);
-			} 
-			if (len > slen)
-				return (NULL);
-		} 
-		s--;
-	}
-	return ((char *)s);
-}
+// 	c = *find++;
+// 	if (c != '\0')
+// 	{
+// 		len = strlen(find);
+// 		while (ft_strncmp(s, find, len) != 0)
+// 		{
+// 			while (sc != c)
+// 			{
+// 				sc = *s++;
+// 				if (sc == '\0' || slen-- < 1)/.;[=]
+// 					return (NULL);
+// 			}
+// 			if (len > slen)
+// 				return (NULL);
+// 		}
+// 		s--;
+// 	}
+// 	return ((char *)s);
+// }
 
 // Main function to test your function
 // int main()

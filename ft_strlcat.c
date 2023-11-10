@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:35 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 00:24:36 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/09 20:26:21 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,38 +32,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	return (d_len + s_len);
 }
 
-// size_t	ft_strlcat(char *dest, const char *src, size_t size)
-// {
-// 	size_t	i;
-// 	size_t	p;
-// 	size_t	j;
-
-// 	j = 0;
-// 	if (size == 0)
-// 		return (ft_strlen(src));
-// 	i = ft_strlen(dest);
-// 	if (size <= i)
-// 		return (size + ft_strlen(src));
-// 	p = size - i - 1;
-// 	while (src[j] != '\0' && j < p)
-// 	{
-// 		dest[j + i] = src[j];
-// 		j++;
-// 	}
-// 	dest[i + j] = '\0';
-// 	return (i + ft_strlen(src));
-// }
-
 // #include <stdio.h>
+// #include <string.h>
+
 // int	main(void)
 // {
 // 	size_t	size;
 // 	size_t	lcat;
 
-// 	char dest[11] = "hello";
-// 	char src[] = " world";
-// 	size = 18;
-// 	lcat = ft_strlcat(dest, src, size);
+// 	char src[6] = "world";
+// 	char dest[10] = "hello";
+// 	lcat = ft_strlcat(dest, src,11);
 // 	printf(" %s\n", dest);
 // 	printf(" %zu\n", lcat);
 // 	return (0);
