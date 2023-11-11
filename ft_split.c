@@ -5,123 +5,90 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:24:24 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/08 22:41:36 by ysemlali         ###   ########.fr       */
+/*   Created: 2023/11/11 17:19:10 by ysemlali          #+#    #+#             */
+/*   Updated: 2023/11/11 17:22:59 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	next_separator_found(char *sep, char c)
+size_t	ft_wordlen(char const *s, char c)
 {
-	int	i;
+	size_t	len;
 
-	i = 0;
-	while (sep[i] != '\0')
-	{
-		if (sep[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
+	len = 0;
+	while (s[len] && s[len] != c)
+		len++;
+	return (len);
 }
 
-int	count_words(char *str, char *sep)
+size_t	ft_count_words(char const *s, char c)
 {
-	int	i;
-	int	x;
+	size_t	count;
+	size_t	i;
 
+	count = 0;
 	i = 0;
-	x = 0;
-	while (str[i] != '\0')
+	while (s[i])
 	{
-		while (str[i] && next_separator_found(sep, str[i]))
-			i++;
-		if (str[i] == '\0')
-			break ;
-		if (str[i] != '\0')
-			x++;
-		while (str[i] && !next_separator_found(sep, str[i]))
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+		else
 			i++;
 	}
-	return (x);
-}
-
-int	ft_word_len(char *sep, char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] && !next_separator_found(sep, str[i]))
-		i++;
-	return (i);
-}
-
-char	*copy_strings(char *sep, char *str)
-{
-	int		i;
-	int		word_len;
-	char	*word;
-
-	i = 0;
-	word_len = ft_word_len(sep, str);
-	word = malloc(sizeof(char) * (word_len + 1));
-	while (i < word_len)
-	{
-		word[i] = str[i];
-		i++;
-	}
-	word[i] = '\0';
-	return (word);
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		x;
-	int		word_count;
-	char	**strings;
+	char	**result;
+	size_t	i;
+	size_t	j;
 
+	if (!s)
+		return (NULL);
+	result = (char **)malloc(sizeof(char *) * (ft_count_words(s, c) + 1));
+	if (!result)
+		return (NULL);
 	i = 0;
-	x = 0;
-	word_count = count_words((char *)s, &c);
-	strings = (char **)malloc(sizeof(char *) * word_count + 1);
-	if (!strings)
-		return (0);
-	while (s[i] != '\0')
+	j = 0;
+	while (s[i])
 	{
-		while (s[i] && next_separator_found(&c, s[i]))
-			i++;
-		if (s[i] != '\0')
+		if (s[i] != c)
 		{
-			strings[x] = copy_strings(&c, (char *)s + i);
-			x++;
+			result[j++] = ft_substr(s, i, ft_wordlen(&s[i], c));
+			i += ft_wordlen(&s[i], c);
 		}
-		while (s[i] && !next_separator_found(&c, s[i]))
+		else
 			i++;
 	}
-	strings[x] = 0;
-	return (strings);
+	result[j] = NULL;
+	return (result);
 }
+#include "libft.h"
+#include <stdio.h>
 
-// #include <stdio.h>
+int	main(void)
+{
+	char	*str;
+	char	**words;
 
-// int	main(void)
-// {
-// 	char	*input_string;
-// 	char	separator_chars;
-// 	char	**result;
-// 	int		i;
-
-// 	input_string = " hello world this is a test  ";
-// 	separator_chars = ' ';
-// 	i = 0;
-// 	result = ft_split(input_string, separator_chars);
-// 	while (result[i] != 0)
-// 	{
-// 		printf("[%s]", result[i]);
-// 		i++;
-// 	}
-// 	printf("%s", result[i]);
-// 	return (0);
-// }
+	str = "The quick brown fox jumps over the lazy dog";
+	words = ft_split(str, ' ');
+	if (!words)
+	{
+		printf("Error: ft_split returned NULL\n");
+		return (1);
+	}
+	for (int i = 0; words[i]; i++)
+	{
+		printf("%s\n", words[i]);
+		free(words[i]);
+	}
+	free(words);
+	return (0);
+}
