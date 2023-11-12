@@ -6,15 +6,15 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:29:09 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/11 19:43:26 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/12 21:33:59 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_num_len(int n)
+static int	get_num_len(long n)
 {
-	int	len;
+	long	len;
 
 	len = 0;
 	if (n == 0)
@@ -52,13 +52,15 @@ static void	fill_str(char *str, long n, int len)
 
 char	*ft_itoa(int n)
 {
-	char	*str;
 	int		len;
+	char	*str;
+	long	n_long;
 
-	len = get_num_len(n);
+	n_long = (long)n;
+	len = get_num_len(n_long);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	fill_str(str, (long)n, len);
+	fill_str(str, n_long, len);
 	return (str);
 }
