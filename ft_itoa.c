@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:29:09 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/11 18:52:42 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/11 19:43:26 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	get_num_len(int n)
 	return (len);
 }
 
-static void	fill_str(char *str, int n, int len)
+static void	fill_str(char *str, long n, int len)
 {
 	if (n == 0)
 		str[0] = '0';
@@ -59,17 +59,6 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	fill_str(str, n, len);
+	fill_str(str, (long)n, len);
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	char *result;
-// 	result = ft_itoa(NULL);
-// 	printf("ft_itoa result: %s\n", result);
-// 	free(result);
-// 	if (result == NULL)
-// 		printf("MEM LOC FAILED.\n");
-// 	return (0);
-// }
