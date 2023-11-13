@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 00:23:44 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/07 00:23:45 by ysemlali         ###   ########.fr       */
+/*   Created: 2023/11/13 23:41:47 by ysemlali          #+#    #+#             */
+/*   Updated: 2023/11/13 23:42:07 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int	ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			sign *= -1;
-		}
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -39,12 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (output * sign);
 }
-
-// #include <stdio.h>
-// int main() {
-//     char input[] = "\t \v \r \n \f  -100089000000000 ab567";
-//     int result = ft_atoi(input);
-//     int result2 = atoi(input);
-//     printf(" %d \n %d \n", result, result2);
-//     return (0);
-// }

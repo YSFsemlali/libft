@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:56 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/11 18:52:50 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:19:56 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include<limits.h>
 
 typedef struct s_list
 {
