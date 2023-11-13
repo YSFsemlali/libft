@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:35 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/12 22:48:32 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/12 22:52:27 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 // 	printf(" %d   ,   %d   ,%d  ", i, b, c);
 // 	printf("\n%s", dest);
 // 	printf("\n%s\n", src);
-	
 // }
