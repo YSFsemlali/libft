@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 17:19:10 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/13 22:28:33 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:47:36 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,26 +69,4 @@ char	**ft_split(char const *s, char c)
 	result[j] = NULL;
 	return (result);
 }
-// #include "libft.h"
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	*str;
-// 	char	**words;
-
-// 	str = "The quick brown fox jumps over the lazy dog";
-// 	words = ft_split(str, ' ');
-// 	if (!words)
-// 	{
-// 		printf("Error: ft_split returned NULL\n");
-// 		return (1);
-// 	}
-// 	for (int i = 0; words[i]; i++)
-// 	{
-// 		printf("%s\n", words[i]);
-// 		free(words[i]);
-// 	}
-// 	free(words);
-// 	return (0);
-// }
+// splits a string into words using the character c as a delimiter.

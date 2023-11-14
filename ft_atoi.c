@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 23:41:47 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/13 23:42:07 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/14 15:48:12 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,3 +37,5 @@ int	ft_atoi(const char *str)
 	}
 	return (output * sign);
 }
+// converts the initial portion of the string 
+// pointed to by str to int representation.

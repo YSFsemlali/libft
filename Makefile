@@ -7,16 +7,17 @@ BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 $(NAME) : $(OBJS)
 	@ar -rc $(NAME) $(OBJS)
-all : $(NAME)
 
 $(OBJS) : %.o : %.c
 	@cc $(CFLAGS) -c $< -o $@
 
+$(BONUS_OBJS) :  %.o : %.c
+	@cc $(CFLAGS) -c $< -o $@
+
+all : $(NAME)
+
 bonus : $(BONUS_OBJS) $(OBJS)
 	@ar -rc $(NAME) $(BONUS_OBJS) $(OBJS)
-
-$(BONUS_OBJS) : %.o : %.c
-	@cc $(CFLAGS) -c $< -o $@
 
 clean :
 	@rm -f $(OBJS) $(BONUS_OBJS)

@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 23:33:40 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/13 23:33:43 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:41:39 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*p;
 
 	p = (unsigned char *)s;
-	while (n--)
+	while (n > 0)
 	{
-		ft_memset(p, 0, 1);
+		*p++ = 0;
+		n--;
 	}
 }
 
+// clear a string of n bytes that was allocated with malloc.
 // #include <stdio.h>
 // int	main(void)
 // {
