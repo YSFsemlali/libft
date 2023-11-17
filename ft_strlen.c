@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:04:59 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/12 22:50:34 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/15 23:41:16 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	char	*str;
 
 	str = (char *)s;
-	if (!s)
-		return (0);
 	while (*str)
 		str++;
 	return (str - s);
