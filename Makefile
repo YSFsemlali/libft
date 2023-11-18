@@ -11,10 +11,13 @@ $(NAME) : $(OBJS)
 %.o : %.c
 	@cc $(CFLAGS) -c $< -o $@
 
-bonus : $(NAME) $(BONUS_OBJS)
-	ar -rc $(NAME) $(BONUS_OBJS)
+$(BONUS_OBJS) : $(BONUS_SRCS)
+	@cc $(CFLAGS) -c $(BONUS_SRCS)
+	@ar -rc $(NAME) $(BONUS_OBJS)
 
 all : $(NAME)
+
+bonus : $(BONUS_OBJS)
 
 clean :
 	@rm -f $(OBJS) $(BONUS_OBJS)

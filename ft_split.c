@@ -5,14 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/11 17:19:10 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/14 15:47:36 by ysemlali         ###   ########.fr       */
+/*   Created: 2023/11/17 21:56:28 by ysemlali          #+#    #+#             */
+/*   Updated: 2023/11/17 22:13:54 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_wordlen(char const *s, char c)
+static int	freeall(char **result, size_t count)
+{
+	size_t	i;
+
+	if (result[count] == NULL)
+	{
+		i = 0;
+		while (i < count)
+			free(result[i++]);
+		free(result);
+		return (0);
+	}
+	return (1);
+}
+
+size_t	ft_wordlen(const char *s, char c)
 {
 	size_t	len;
 
@@ -22,7 +37,7 @@ size_t	ft_wordlen(char const *s, char c)
 	return (len);
 }
 
-size_t	ft_count_words(char const *s, char c)
+size_t	ft_count_words(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -34,8 +49,7 @@ size_t	ft_count_words(char const *s, char c)
 		if (s[i] != c)
 		{
 			count++;
-			while (s[i] && s[i] != c)
-				i++;
+			i += ft_wordlen(&s[i], c);
 		}
 		else
 			i++;
@@ -43,7 +57,7 @@ size_t	ft_count_words(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**result;
 	size_t	i;
@@ -60,13 +74,14 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			result[j++] = ft_substr(s, i, ft_wordlen(&s[i], c));
+			result[j] = ft_substr(s, i, ft_wordlen(&s[i], c));
+			if (freeall(result, j) != 1)
+				return (NULL);
+			j++;
 			i += ft_wordlen(&s[i], c);
 		}
 		else
 			i++;
 	}
-	result[j] = NULL;
-	return (result);
+	return (result[j] = NULL, result);
 }
-// splits a string into words using the character c as a delimiter.
