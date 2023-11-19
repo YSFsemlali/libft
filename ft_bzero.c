@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 23:33:40 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/17 20:48:55 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 15:41:09 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ void	ft_bzero(void *s, size_t n)
 	p = (unsigned char *)s;
 	while (n > 0)
 	{
-		*p++ = 0;
+		*p = 0;
+		p++;
 		n--;
 	}
 }

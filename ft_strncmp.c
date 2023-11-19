@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 10:04:37 by lsemlali          #+#    #+#             */
-/*   Updated: 2023/11/09 18:41:20 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:14:16 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		return (-1);
 	return (0);
 }
-
-// #include <stdio.h>
-// #include <strings.h>
-
-// int	main(void)
-// {
-// 	char *s1 = "\200";
-// 	char *s2 = "\0";
-
-// 	char *s11 = "omg1||||||||||||||||";
-// 	char *s22 = "omg3";
-
-// 	size_t size = 6;
-// 	char comp = ft_strncmp(s11, s22, size);
-// 	char comp2 = strncmp(s11, s22, size);
-// 	printf(" %d", comp);
-// 	printf(" %d", comp2);
-
-// 	return (0);
-// }

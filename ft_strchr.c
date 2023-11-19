@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:26 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/12 18:15:04 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/18 19:32:12 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	ch;
-
-	ch = c;
 	while (*s)
 	{
-		if (*s == ch)
+		if (*s == ((char)c))
 			return ((char *)s);
 		s++;
 	}
-	if (ch == '\0')
+	if ((char )c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main () {
-//    const char str[] = "www.tutorialspoint.com";
-//    const char ch = '.';
-//    char *ret;
-
-//    ret = strchr(str, ch);
-
-//    printf("String after |%c| is - |%s|\\n", ch, ret);
-
-//    return(0);
-// }

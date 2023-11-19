@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:23:30 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/18 14:19:28 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 16:05:51 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*ptr;
 
 	total_size = num * size;
-	if (num != 0 && total_size / num != size)
+	if (num && total_size > UINT_MAX)
 		return (NULL);
 	ptr = malloc(total_size);
 	if (!ptr)

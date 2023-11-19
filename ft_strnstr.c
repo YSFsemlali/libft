@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:44 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/11 18:28:34 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:17:07 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *h, const char *n, size_t l)
 	if (*n == '\0')
 		return ((char *)h);
 	n_len = ft_strlen(n);
-	while (*h != '\0' && l >= n_len)
+	while (*h && l >= n_len)
 	{
 		if (*h == *n && ft_strncmp(h, n, n_len) == 0)
 			return ((char *)h);
