@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 20:13:53 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/12 18:14:55 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 17:53:52 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (0);
 	front = front_trim((char *)s1, (char *)set);
 	end = end_trim((char *)s1, (char *)set);
-	if (end < front)
+	if (front > end)
 	{
-		result = (char *)malloc(1);
-		if (result == NULL)
-			return (NULL);
-		result[0] = '\0';
+		result = ft_strdup("");
 		return (result);
 	}
 	result = (char *)malloc((end - front) + 2);
@@ -85,29 +82,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 
 // #include <stdio.h>
-
-// int	main(int argc, char *argv[])
+// int	main(int argc, char **argv)
 // {
-// 	if (argc != 3)
+// 	if (argc == 2)
 // 	{
-// 		printf("Usage: %s <input_string> <set_to_trim>\n", argv[0]);
-// 		return (1);
+// 		char *s = argv[1];
+// 		char *set = argv[2];
+// 		char *res = ft_strtrim(s, set);
+// 		printf("%s\n", res);
+// 		return (0);
 // 	}
-
-// 	char *input_string = argv[1];
-// 	char *set_to_trim = argv[2];
-
-// 	char *trimmed_string = ft_strtrim(input_string, set_to_trim);
-
-// 	if (trimmed_string != NULL)
-// 	{
-// 		printf("Trimmed string: %s\n", trimmed_string);
-// 		free(trimmed_string);
-// 	}
-// 	else
-// 	{
-// 		printf("Memory allocation failed.\n");
-// 	}
-
-// 	return (0);
 // }

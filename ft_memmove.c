@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:18 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 15:14:38 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:34:28 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		while (len > 0)
 		{
 			d[len - 1] = s[len - 1];
-			printf("%c\n", d[len - 1]);
-			printf("%c\n", s[len - 1]);
 			len--;
 		}
 	}
