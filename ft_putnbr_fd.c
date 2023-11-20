@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 19:59:20 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 16:36:49 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:55:09 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,3 @@ void	ft_putnbr_fd(int n, int fd)
 	res = (num % 10) + '0';
 	ft_putchar_fd(res, fd);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-//     ft_putnbr_fd(12345, 1);
-//     ft_putchar_fd('\n', 1);
-// }

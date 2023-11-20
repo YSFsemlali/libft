@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 17:25:57 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/09 18:49:19 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:56:53 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (result[i] = '\0', result);
 }
-
-// #include <stdio.h>
-// char to_upper(unsigned int i, char c) {
-//    return ((i % 2 == 0) ? (char)ft_toupper(c) : c);
-// }
-// int main() {
-//    char *s = "hello world";
-//    char *upper = ft_strmapi(s, to_upper);
-//    printf("%s\n", upper);
-//    free(upper);
-//    return (0);
-// }

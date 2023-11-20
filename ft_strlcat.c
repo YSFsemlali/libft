@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 00:24:35 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 21:14:13 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:30:48 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	dest[d_len + i] = '\0';
 	return (d_len + ft_strlen(src));
 }
-// size must have enough space for src and dest,
-/

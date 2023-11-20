@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:29:09 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/14 16:56:23 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:59:06 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,3 @@ char	*ft_itoa(int n)
 	fill_str(str, n_long, len);
 	return (str);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-// 	long i = -214748364804;
-// 	char *str = ft_itoa(i);
-// 	printf("%s\n", str);
-// 	free(str);
-// 	return (0);
-// }

@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:56:28 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/17 22:13:54 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:58:38 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	freeall(char **result, size_t count)
 	return (1);
 }
 
-size_t	ft_wordlen(const char *s, char c)
+static size_t	ft_wordlen(const char *s, char c)
 {
 	size_t	len;
 
@@ -37,7 +37,7 @@ size_t	ft_wordlen(const char *s, char c)
 	return (len);
 }
 
-size_t	ft_count_words(const char *s, char c)
+static size_t	ft_count_words(const char *s, char c)
 {
 	size_t	count;
 	size_t	i;

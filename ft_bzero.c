@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 23:33:40 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 15:41:09 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:59:31 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,3 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
-
-// clear a string of n bytes that was allocated with malloc.
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *str = malloc(10);
-// 	ft_bzero(str, 10);
-// 	printf("%s\n", str);
-// 	free(str);
-// 	return (0);
-// }

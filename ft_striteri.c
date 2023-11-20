@@ -6,7 +6,7 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:46:31 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 16:49:11 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:56:18 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	size;
 
 	size = ft_strlen(s);
-	if (!s)
+	if (!s || !f)
 		return ;
 	i = 0;
 	while (i < size)

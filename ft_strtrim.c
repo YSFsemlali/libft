@@ -6,13 +6,13 @@
 /*   By: ysemlali <ysemlali@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 20:13:53 by ysemlali          #+#    #+#             */
-/*   Updated: 2023/11/19 17:53:52 by ysemlali         ###   ########.fr       */
+/*   Updated: 2023/11/20 15:58:02 by ysemlali         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	next_set_found(char *set, char c)
+static int	next_set_found(char *set, char c)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	next_set_found(char *set, char c)
 	return (0);
 }
 
-int	front_trim(char *s, char *set)
+static int	front_trim(char *s, char *set)
 {
 	int	i;
 
@@ -41,7 +41,7 @@ int	front_trim(char *s, char *set)
 	return (i);
 }
 
-int	end_trim(char *s, char *set)
+static int	end_trim(char *s, char *set)
 {
 	int	i;
 
@@ -80,16 +80,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		result[i++] = s1[front++];
 	return (result[i] = '\0', result);
 }
-
-// #include <stdio.h>
-// int	main(int argc, char **argv)
-// {
-// 	if (argc == 2)
-// 	{
-// 		char *s = argv[1];
-// 		char *set = argv[2];
-// 		char *res = ft_strtrim(s, set);
-// 		printf("%s\n", res);
-// 		return (0);
-// 	}
-// }
